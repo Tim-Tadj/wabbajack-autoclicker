@@ -1,0 +1,5 @@
+opencv-python>=4.13.0.92
+pillow>=12.1.0
+psutil
+pyautogui
+PySide6

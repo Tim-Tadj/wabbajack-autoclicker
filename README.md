@@ -1,37 +1,35 @@
-# wabbajack-autoclicker
-
-A complementary script for [Wabbajack](https://github.com/wabbajack-tools/wabbajack), a Modlist installer for Skyrim. The script autoclicks on the download button, which benefits people who do not have Nexus Premium and want to automate downloading a modlist with hundreds to thousands of mods.
-
-You can still use your PC while the script is running, as long as you don't obstruct the Wabbajack window and don't mind the script stealing your focus every 8 seconds.
-
-## Limitations
-
-- The script literary just clicks on a button if it finds it. If the button is obstructed, it can't click on it.
-- It doesn't start parallel  downloads. The script monitors your down rate and only starts downloading the next file once the previous one is completed.
-- The download button is responsive, so you need to make a custom screenshot for your window size.
-- This isn't fast download you would get for buying Nexus Premium. It's automation of the free slow download. You are still limited to 1.5 MB or 3 MB down speed and forced to wait 5s.
 - **Oh yeah, and it's probably against Nexus TOS.**
 
 ## Prerequisites
+If you just want to run the application, download the installer from the Releases page.
 
-[Python 3.x](https://www.python.org/downloads/)
+If you want to build it from source:
+1. Install [uv](https://docs.astral.sh/uv/).
+   `powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"`
+2. Clone this repository.
+3. Run `uv sync` to install dependencies.
 
-`pip install keyboard`
+## Building
 
-`pip install PyAutoGUI`
+To create a Windows Installer (.msi):
+```powershell
+uv run cxfreeze bdist_msi
+```
+The installer will be located in the `dist/` folder.
 
-`pip install psutil`
-
-A custom screenshot of a download button. You can use Snipping Tool or `WIN + SHIFT + S` (example is provided in the archive).
+To create a standalone executable folder:
+```powershell
+uv run cxfreeze build
+```
+The executable will be in `build/exe.win-amd64-3.12/`.
 
 ## Usage
 
-Run Wabbajack and begin downloading your modlist. Once a new window opens, redirecting you onto Nexus page, take a screenshot of the `SLOW DONWLOAD` button.
+1. Run Wabbajack and begin downloading your modlist.
+2. Launch **Wabbajack Autoclicker** (from Start Menu or via `uv run "wabbajack autoclicker.py"`).
+3. When the Nexus Mods download page appears, click **Capture Screenshot** in the app and select the "SLOW DOWNLOAD" button area.
 
-![Example of the SLOW DOWNLOAD button](https://github.com/Dalibor-P/wabbajack-autoclicker/blob/6120a7fe5a8f3c8b1fb408b501e092d9977f5593/example%20slow%20download%20button.png)
+!Example of the SLOW DOWNLOAD button
 
-Make sure you have the screenshot in the same folder as your script with a name `slow download button.png`.
-
-Run the script. Select your network interface (probably Ethernet, so 0). Reposition your windows so that none of them obstruct the Nexus window.
-
-Press enter to start the autoclicker. Hold `CTRL + SHIFT + E` if you want to end the script.
+4. Select your network interface from the dropdown.
+5. Click **Start**.

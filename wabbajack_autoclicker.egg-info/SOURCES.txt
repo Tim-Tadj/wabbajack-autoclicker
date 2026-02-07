@@ -1,0 +1,8 @@
+LICENSE
+README.md
+pyproject.toml
+wabbajack_autoclicker.egg-info/PKG-INFO
+wabbajack_autoclicker.egg-info/SOURCES.txt
+wabbajack_autoclicker.egg-info/dependency_links.txt
+wabbajack_autoclicker.egg-info/requires.txt
+wabbajack_autoclicker.egg-info/top_level.txt

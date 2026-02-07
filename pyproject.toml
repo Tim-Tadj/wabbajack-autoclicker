@@ -1,0 +1,12 @@
+[project]
+name = "wabbajack-autoclicker"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "keyboard>=0.13.5",
+    "opencv-python>=4.13.0.92",
+    "psutil>=7.2.2",
+    "pyautogui>=0.9.54",
+]

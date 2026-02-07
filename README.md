@@ -14,13 +14,12 @@ You can still use your PC while the script is running, as long as you don't obst
 
 ## Prerequisites
 
-[Python 3.x](https://www.python.org/downloads/)
+[uv](https://docs.astral.sh/uv/)
 
-`pip install keyboard`
+To install uv, run the following in PowerShell:
+`powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"`
 
-`pip install PyAutoGUI`
-
-`pip install psutil`
+Run `uv sync` to install dependencies.
 
 A custom screenshot of a download button. You can use Snipping Tool or `WIN + SHIFT + S` (example is provided in the archive).
 
@@ -32,6 +31,6 @@ Run Wabbajack and begin downloading your modlist. Once a new window opens, redir
 
 Make sure you have the screenshot in the same folder as your script with a name `slow download button.png`.
 
-Run the script. Select your network interface (probably Ethernet, so 0). Reposition your windows so that none of them obstruct the Nexus window.
+Run the script using `uv run "wabbajack autoclicker.py"`. Select your network interface (probably Ethernet, so 0). Reposition your windows so that none of them obstruct the Nexus window.
 
 Press enter to start the autoclicker. Hold `CTRL + SHIFT + E` if you want to end the script.

@@ -50,7 +50,13 @@ def click_on_image(image_path):
     """
     Searches for an image on screen and clicks on it if found.
     """
-    buttonloc = pyautogui.locateOnScreen(image_path)
+    # Use a try-except block to handle potential exceptions from pyautogui.locateOnScreen
+    try:
+        buttonloc = pyautogui.locateOnScreen(image_path, confidence=0.8)
+    except Exception as e:
+        print(f"Error while searching for the image: {e}")
+        buttonloc = None
+    
     if buttonloc is None:
         print(f"Couldn't find the download button!")
     else:

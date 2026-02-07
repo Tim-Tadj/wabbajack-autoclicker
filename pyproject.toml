@@ -19,12 +19,12 @@ dependencies = [
 
 [tool.cxfreeze]
 executables = [
-    { script = "wabbajack autoclicker.py", target_name = "wabbajack_autoclicker", base = "gui", icon = "icon.ico" }
+    { script = "wabbajack autoclicker.py", target_name = "wabbajack_autoclicker", base = "gui", icon = "icon.ico", shortcut_name = "Wabbajack Autoclicker", shortcut_dir = "ProgramMenuFolder" }
 ]
 
 [tool.cxfreeze.build_exe]
 excludes = ["tkinter"]
-include_files = ["slow download button.png", "icon.png"]
+include_files = ["slow download button.png", "icon.ico"]
 
 [tool.cxfreeze.bdist_msi]
 # Unique ID for this application to allow upgrades. Do not change this for future versions.

@@ -3,3 +3,4 @@ uv.lock
 .venv/
 
 build/
+dist/
